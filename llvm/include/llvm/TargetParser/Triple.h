@@ -105,6 +105,7 @@ public:
     wasm64,         // WebAssembly with 64-bit pointers
     renderscript32, // 32-bit RenderScript
     renderscript64, // 64-bit RenderScript
+    m88k,           // M88000 (big endian): m88k
     ve,             // NEC SX-Aurora Vector Engine
     LastArchType = ve
   };
@@ -950,6 +951,10 @@ public:
     return getArch() == Triple::x86 || getArch() == Triple::x86_64;
   }
 
+  /// Tests whether the target is M88k.
+  bool isM88K() const{
+    return getArch() == Triple::m88k;
+  }
   /// Tests whether the target is VE
   bool isVE() const {
     return getArch() == Triple::ve;

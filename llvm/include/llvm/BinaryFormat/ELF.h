@@ -935,6 +935,18 @@ enum {
 #include "ELFRelocs/LoongArch.def"
 };
 
+enum : unsigned {
+  // Not ABI compliant
+  EF_88K_NABI = 0x80000000,
+  // File uses 88110-specific features
+  EF_88K_M88110 = 0x00000004,
+
+};
+
+enum {
+  #include "ELFRelocs/M88k.def"
+};
+
 // Xtensa specific e_flags
 enum : unsigned {
   // Four-bit Xtensa machine type mask.

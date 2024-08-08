@@ -2653,7 +2653,7 @@ public:
   IRBuilder(const IRBuilder &) = delete;
 
   InserterTy &getInserter() { return Inserter; }
-};
+ };
 
 template <typename FolderTy, typename InserterTy>
 IRBuilder(LLVMContext &, FolderTy, InserterTy, MDNode *,
