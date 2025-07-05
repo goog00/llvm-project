@@ -47,6 +47,8 @@ llvm::Pass *createScopInfoWrapperPassPass();
 llvm::Pass *createRewriteByrefParamsPass();
 llvm::Pass *createIslAstInfoWrapperPassPass();
 llvm::Pass *createCodeGenerationPass();
+llvm::Pass *createMatAddParallelPass();
+llvm::Pass *createMatMulTilingPass();
 #ifdef GPU_CODEGEN
 llvm::Pass *createPPCGCodeGenerationPass(GPUArch Arch = GPUArch::NVPTX64,
                                          GPURuntime Runtime = GPURuntime::CUDA);
@@ -113,6 +115,8 @@ void initializeJSONImporterPass(llvm::PassRegistry &);
 void initializeIslAstInfoWrapperPassPass(llvm::PassRegistry &);
 void initializeCodeGenerationPass(llvm::PassRegistry &);
 void initializeRewriteByrefParamsPass(llvm::PassRegistry &);
+void initializeMatAddParallelPassPass(llvm::PassRegistry &); //test
+void initializeMatMulTilingPassPass(llvm::PassRegistry &); //test
 #ifdef GPU_CODEGEN
 void initializePPCGCodeGenerationPass(llvm::PassRegistry &);
 void initializeManagedMemoryRewritePassPass(llvm::PassRegistry &);

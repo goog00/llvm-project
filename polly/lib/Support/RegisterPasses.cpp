@@ -269,6 +269,9 @@ void initializePollyPasses(PassRegistry &Registry) {
   initializeSimplifyPass(Registry);
   initializeDumpModulePass(Registry);
   initializePruneUnprofitablePass(Registry);
+
+  initializeMatAddParallelPassPass(Registry); // 加入这一句
+  initializeMatMulTilingPassPass(Registry); // 加入这一句
 }
 
 /// Register Polly passes such that they form a polyhedral optimizer.
