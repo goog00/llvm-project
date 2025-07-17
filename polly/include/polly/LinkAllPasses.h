@@ -65,6 +65,10 @@ llvm::Pass *createMaximalStaticExpansionPass();
 llvm::Pass *createSimplifyWrapperPass(int);
 llvm::Pass *createSimplifyPrinterLegacyPass(llvm::raw_ostream &OS);
 llvm::Pass *createPruneUnprofitableWrapperPass();
+llvm::Pass *createMatAddParallelPassPass();
+
+llvm::Pass *createPassDemoPassPass();
+llvm::Pass *createMatMulTilingPassPass();
 
 extern char &CodePreparationID;
 } // namespace polly
@@ -118,6 +122,10 @@ struct PollyForcePassLinking {
     polly::createSimplifyWrapperPass(0);
     polly::createSimplifyPrinterLegacyPass(llvm::outs());
     polly::createPruneUnprofitableWrapperPass();
+
+    polly::createMatAddParallelPassPass(); //  
+    polly::createPassDemoPassPass(); //  
+    polly::createMatMulTilingPassPass(); 
   }
 } PollyForcePassLinking; // Force link by creating a global definition.
 } // namespace
@@ -158,6 +166,11 @@ void initializeSimplifyPrinterLegacyPassPass(llvm::PassRegistry &);
 void initializePruneUnprofitableWrapperPassPass(llvm::PassRegistry &);
 void initializePolyhedralInfoPass(llvm::PassRegistry &);
 void initializePolyhedralInfoPrinterLegacyPassPass(llvm::PassRegistry &);
+
+void initializeMatAddParallelPassPass(llvm::PassRegistry &);
+void initializePassDemoPassPass(llvm::PassRegistry &);
+void initializeMatMulTilingPassPass(llvm::PassRegistry &);
+
 } // namespace llvm
 
 #endif

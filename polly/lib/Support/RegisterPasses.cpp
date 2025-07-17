@@ -251,6 +251,10 @@ void initializePollyPasses(llvm::PassRegistry &Registry) {
   initializeSimplifyPrinterLegacyPassPass(Registry);
   initializeDumpModuleWrapperPassPass(Registry);
   initializePruneUnprofitableWrapperPassPass(Registry);
+  initializeDeadCodeElimWrapperPassPass(Registry);
+
+  initializePassDemoPassPass(Registry);
+  initializeMatMulTilingPassPass(Registry);
 }
 
 static bool shouldEnablePollyForOptimization() { return PollyEnabled; }

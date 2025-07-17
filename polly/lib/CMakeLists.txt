@@ -87,6 +87,10 @@ add_llvm_pass_plugin(Polly
   Transform/ScopInliner.cpp
   Transform/ManualOptimizer.cpp
   Transform/MatmulOptimizer.cpp
+
+  Transform/MatMulPass.cpp
+  Transform/MatAddParallelPass.cpp
+  Transform/PassDemo.cpp
   ${POLLY_HEADER_FILES}
 
   LINK_COMPONENTS
