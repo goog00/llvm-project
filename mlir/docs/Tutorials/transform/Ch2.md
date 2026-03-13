@@ -278,7 +278,7 @@ This is enough to define transform operations. The only remaining bit is providi
 
 
 ```c++
-// In TransformDialect.cpp (don't forget a declaration in TransformDialect.h);
+// In MyExtension.cpp (don't forget a declaration in MyExtension.h);
 
 void registerMyExtension(::mlir::DialectRegistry &registry) {
   registry.addExtensions<MyExtension>();
